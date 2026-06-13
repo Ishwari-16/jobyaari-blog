@@ -14,6 +14,11 @@ Route::get('/blog/{blog}', [BlogController::class, 'show'])->name('blogs.show');
 Route::get('/search', [BlogController::class, 'search'])->name('blogs.search');
 Route::post('/blogs/filter', [BlogController::class, 'filter'])->name('blogs.filter');
 
+// ADD THIS
+Route::get('/dashboard', function () {
+    return redirect()->route('home');
+})->middleware('auth')->name('dashboard');
+
 // Admin Routes
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
 
