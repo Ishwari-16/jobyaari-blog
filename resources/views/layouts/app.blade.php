@@ -7,7 +7,9 @@
 
         <title>{{ config('app.name', 'JobYaari') }} - @yield('title', 'Blog')</title>
 
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <link rel="stylesheet" href="{{ asset('build/assets/app.css') }}">
+        <script src="{{ asset('build/assets/app.js') }}" defer></script>
+
     </head>
     <body>
         <!-- Navbar -->
