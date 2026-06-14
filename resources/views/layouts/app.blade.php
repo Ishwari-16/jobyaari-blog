@@ -86,10 +86,10 @@
                 <div class="row">
                     <div class="col-md-6">
                         <h5 class="fw-bold">JobYaari</h5>
-                        <p class="text-white">Your trusted platform for career insights and job opportunities.</p>
+                        <p style="color:#d1d5db;">Your trusted platform for career insights and job opportunities.</p>
                     </div>
                     <div class="col-md-6 text-md-end">
-                        <p class="text-white mb-0">&copy; {{ date('Y') }} JobYaari. All rights reserved.</p>
+                        <p style="color:#d1d5db;" class="mb-0">&copy; {{ date('Y') }} JobYaari. All rights reserved.</p>
                     </div>
                 </div>
             </div>
