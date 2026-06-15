@@ -76,17 +76,21 @@ class BlogSeeder extends Seeder
             $category = $categories[$index % $categories->count()];
             $content = $blogContents[$index % count($blogContents)];
             $image = $blogImages[$index] ?? null;
+            $slug = Str::slug($title);
 
-            Blog::create([
-                'title' => $title,
-                'slug' => Str::slug($title),
-                'short_description' => Str::limit($content, 150),
-                'content' => $content . ' ' . str_repeat('This comprehensive guide provides actionable insights and practical advice to help you succeed in your career journey. Whether you\'re just starting out or looking to advance to the next level, these strategies will help you achieve your professional goals. ', 3),
-                'category_id' => $category->id,
-                'image' => $image,
-                'published_at' => now()->subDays(rand(1, 60)),
-                'is_featured' => $index < 5,
-            ]);
+            Blog::firstOrCreate(
+                ['slug' => $slug],
+                [
+                    'title' => $title,
+                    'slug' => $slug,
+                    'short_description' => Str::limit($content, 150),
+                    'content' => $content . ' ' . str_repeat('This comprehensive guide provides actionable insights and practical advice to help you succeed in your career journey. Whether you\'re just starting out or looking to advance to the next level, these strategies will help you achieve your professional goals. ', 3),
+                    'category_id' => $category->id,
+                    'image' => $image,
+                    'published_at' => now()->subDays(rand(1, 60)),
+                    'is_featured' => $index < 5,
+                ]
+            );
         }
     }
 }

@@ -20,10 +20,14 @@ class DatabaseSeeder extends Seeder
             BlogSeeder::class,
         ]);
 
-        User::factory()->create([
-            'name' => 'Admin User',
-            'email' => 'admin@jobyaari.com',
-            'role' => 'admin',
-        ]);
+        User::firstOrCreate(
+            ['email' => 'admin@jobyaari.com'],
+            [
+                'name' => 'Admin User',
+                'email' => 'admin@jobyaari.com',
+                'password' => bcrypt('password'),
+                'role' => 'admin',
+            ]
+        );
     }
 }
