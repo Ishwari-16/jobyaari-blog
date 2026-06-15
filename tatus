@@ -1,0 +1,53 @@
+[33ma4401e4[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Rebuild assets with jQuery
+[33m2375a09[m Fix blogs migration
+[33m8f12009[m Fix blogs migration
+[33m936d118[m Fix migration filenames
+[33m0941dc7[m Remove jobs migration
+[33mc37a589[m Fix migration autoload
+[33mb85897d[m Clear autoload cache
+[33md8867e4[m Add Vite build assets
+[33m6f12d54[m Add Vite build assets
+[33m63e0e8f[m Add Vite build assets
+[33m045a44d[m Fix jquery loading
+[33mf1366e8[m Fix footer text color
+[33md216f5a[m Fix footer text color
+[33m1dd747e[m Fix Tailwind CSS build
+[33mfa06179[m Fix Tailwind CSS build
+[33m93088be[m Fix Tailwind CSS build
+[33mec893d6[m Fix bootstrap assets
+[33mb00c9c7[m Add bootstrap CDN
+[33m994bb70[m Fix Vite assets for Render
+[33m6036d5d[m Use database sessions
+[33mb758c8d[m Fix dashboard route
+[33mf523fc8[m Fix dashboard redirect
+[33m6650570[m Fix session configuration
+[33m5778cfa[m Fix dashboard redirect
+[33m1368fdb[m Fix session cookie
+[33m53f7d02[m final fix 419 csrf render
+[33m0ae837a[m fix 419 csrf session render
+[33m0dd4944[m fix 419 cookie session
+[33m3d7444d[m fix 419 cookie session
+[33m03cc570[m fix register redirect route
+[33m6a8ad8b[m fix production https and env config
+[33m918279c[m fix assets build
+[33mcd1670f[m fix assets build
+[33mb4074a5[m fix render migration issue
+[33m8dd141f[m Fix migration order
+[33mbe7e2c3[m Fix migration order
+[33m740a8f2[m Fix migration order
+[33m1a29820[m Fix migration order
+[33m255748a[m Fix migration order
+[33me36dbe9[m Fix migration order
+[33mfc9255d[m Fix migration order
+[33m83d1877[m Fix Render startup
+[33mf251747[m Run migrations and seed database on startup
+[33m9cc00f1[m Run migrations and seed database
+[33me90968c[m Run migrations on Render startup
+[33m48766a8[m Run migrations on startup
+[33m3f81439[m Fix composer installation in Docker
+[33m64870ca[m Fix composer installation
+[33m9543623[m Update Dockerfile
+[33mc2c9c7d[m Add Dockerfile for PHP application setup
+[33mf47cc1a[m Fix Vercel output directory for Laravel Vite
+[33m7ba2106[m Fix Vercel output directory for Laravel Vite
+[33m081e96b[m Final UI fixes + blog image fixes completed

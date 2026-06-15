@@ -55,40 +55,38 @@
             </div>
 
             <!-- Stats Cards -->
-            <div class="row mb-4">
-                <div class="col-md-4 mb-4">
-                    <div class="stat-card">
-                        <div class="stat-icon" style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white;">
-                            <i class="bi bi-file-text"></i>
-                        </div>
-                        <h6 class="text-muted mb-1">Total Blogs</h6>
-                        <h3 class="fw-bold mb-0">{{ \App\Models\Blog::count() }}</h3>
-                        <small class="text-success"><i class="bi bi-arrow-up"></i> Published articles</small>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="stat-card">
-                        <div class="stat-icon" style="background: linear-gradient(135deg, #198754 0%, #20c997 100%); color: white;">
-                            <i class="bi bi-folder"></i>
-                        </div>
-                        <h6 class="text-muted mb-1">Categories</h6>
-                        <h3 class="fw-bold mb-0">{{ \App\Models\Category::count() }}</h3>
-                        <small class="text-success"><i class="bi bi-arrow-up"></i> Active categories</small>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="stat-card">
-                        <div class="stat-icon" style="background: linear-gradient(135deg, #6610F2 0%, #0D6EFD 100%); color: white;">
-                            <i class="bi bi-people"></i>
-                        </div>
-                        <h6 class="text-muted mb-1">Users</h6>
-                        <h3 class="fw-bold mb-0">{{ \App\Models\User::count() }}</h3>
-                        <small class="text-success"><i class="bi bi-arrow-up"></i> Registered users</small>
-                    </div>
-                </div>
+<div class="row mb-4">
+    <div class="col-md-4 mb-4">
+        <div class="stat-card">
+            <div class="stat-icon" style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white;">
+                <i class="bi bi-file-text"></i>
             </div>
+            <h6 class="text-muted mb-1">Total Blogs</h6>
+            <h3 class="fw-bold mb-0">{{ \App\Models\Post::count() }}</h3>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="stat-card">
+            <div class="stat-icon" style="background: linear-gradient(135deg, #198754 0%, #20c997 100%); color: white;">
+                <i class="bi bi-folder"></i>
+            </div>
+            <h6 class="text-muted mb-1">Categories</h6>
+            <h3 class="fw-bold mb-0">{{ \App\Models\Category::count() }}</h3>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="stat-card">
+            <div class="stat-icon" style="background: linear-gradient(135deg, #6610F2 0%, #0D6EFD 100%); color: white;">
+                <i class="bi bi-people"></i>
+            </div>
+            <h6 class="text-muted mb-1">Users</h6>
+            <h3 class="fw-bold mb-0">{{ \App\Models\User::count() }}</h3>
+        </div>
+    </div>
+</div>
+
 
             <!-- Recent Blogs -->
             <div class="row">

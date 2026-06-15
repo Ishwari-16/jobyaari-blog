@@ -53,20 +53,98 @@
 
             <div class="card shadow-sm border-0">
                 <div class="card-body">
-                    @forelse($blogs as $blog)
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Title</th>
-                                        <th>Category</th>
-                                        <th>Status</th>
-                                        <th>Published</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach($blogs as $blog)
+                    @if($blogs->count() > 0)
+
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Published</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach($blogs as $blog)
+                <tr>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <img src="{{ $blog->image_url }}"
+                                 class="rounded me-2"
+                                 style="width:50px;height:50px;object-fit:cover;">
+
+                            <div>
+                                <a href="{{ route('admin.posts.show', $blog) }}" class="fw-bold text-decoration-none">
+                                    {{ \Illuminate\Support\Str::limit($blog->title, 40) }}
+                                </a>
+
+                                <small class="text-muted d-block">
+                                    {{ \Illuminate\Support\Str::limit($blog->short_description ?? $blog->content, 50) }}
+                                </small>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td>
+                        @if($blog->category)
+                            <span class="badge bg-primary">
+                                {{ $blog->category->name }}
+                            </span>
+                        @else
+                            N/A
+                        @endif
+                    </td>
+
+                    <td>
+                        @if($blog->is_featured)
+                            <span class="badge bg-warning text-dark">Featured</span>
+                        @else
+                            <span class="badge bg-secondary">Standard</span>
+                        @endif
+                    </td>
+
+                    <td>
+                        {{ $blog->published_at ? $blog->published_at->format('M d, Y') : 'Draft' }}
+                    </td>
+
+                    <td>
+                        <a href="{{ route('admin.posts.show', $blog) }}" class="btn btn-sm btn-primary">
+                            View
+                        </a>
+
+                        <a href="{{ route('admin.posts.edit', $blog) }}" class="btn btn-sm btn-warning">
+                            Edit
+                        </a>
+
+                        <form action="{{ route('admin.posts.destroy', $blog) }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+
+                            <button class="btn btn-sm btn-danger" onclick="return confirm('Delete?')">
+                                Delete
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
+
+@else
+
+<div class="empty-state">
+    <i class="bi bi-journal-x empty-state-icon"></i>
+    <h4>No Blogs Yet</h4>
+    <a href="{{ route('admin.posts.create') }}" class="btn btn-gradient">
+        Create Blog
+    </a>
+</div>
+
+@endif
                                         <tr>
                                             <td>
                                                 <div class="d-flex align-items-center">

@@ -40,7 +40,7 @@ class PostController extends Controller
 
         Blog::create([
             'title' => $request->title,
-            'slug' => Str::slug($request->title),
+            'slug' => Str::slug($request->title) . '-' . time(),
             'content' => $request->content,
             'short_description' => $request->short_description,
             'category_id' => $request->category_id,
@@ -82,7 +82,7 @@ class PostController extends Controller
 
         $blog->update([
             'title' => $request->title,
-            'slug' => Str::slug($request->title),
+            'slug' => Str::slug($request->title) . '-' . $blog->id,
             'content' => $request->content,
             'short_description' => $request->short_description,
             'category_id' => $request->category_id,
