@@ -59,7 +59,7 @@ class Blog extends Model
         $categoryName = $this->category ? strtolower($this->category->name) : 'general';
 
         $placeholders = [
-            'career tips' => 'https://images.unsplash.com/photo-1522202176988-66273c2fd55d?w=800&q=80',
+            'career tips' => 'https://images.pexels.com/photos/1181354/pexels-photo-1181354.?w=800&q=80',
             'job search' => 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80',
             'interview prep' => 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
             'resume building' => 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80',
