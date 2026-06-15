@@ -3,7 +3,7 @@
         <div class="card card-hover h-100">
             <div class="position-relative overflow-hidden">
                 @if($blog->image)
-                    <img src="{{ $blog->image }}" alt="{{ $blog->title }}" class="card-image w-100">
+                    <img src="{{ $blog->image_url ?? $blog->image }}" alt="{{ $blog->title }}" class="card-image w-100">
                 @else
                     <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" alt="{{ $blog->title }}" class="card-image w-100">
                 @endif

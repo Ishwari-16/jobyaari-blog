@@ -6,7 +6,7 @@
 <!-- Hero Image -->
 <div class="position-relative" style="height: 400px; overflow: hidden;">
     @if($blog->image)
-        <img src="{{ $blog->image }}" alt="{{ $blog->title }}" class="w-100 h-100 object-fit-cover">
+        <img src="{{ $blog->image_url ?? $blog->image }}" alt="{{ $blog->title }}" class="card-image w-100">
     @else
         <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" alt="{{ $blog->title }}" class="w-100 h-100 object-fit-cover">
     @endif
