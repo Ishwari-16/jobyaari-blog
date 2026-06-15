@@ -50,7 +50,7 @@ class BlogSeeder extends Seeder
         ];
 
         $blogImages = [
-            'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80', // Career Tips
+            'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg', // Career Tips
             null,
             null,
             null,

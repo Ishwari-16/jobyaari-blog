@@ -5,7 +5,11 @@
 @section('content')
 <!-- Hero Image -->
 <div class="position-relative" style="height: 400px; overflow: hidden;">
-    <img src="{{ $blog->image_url }}" alt="{{ $blog->title }}" class="w-100 h-100 object-fit-cover">
+    @if($blog->image)
+        <img src="{{ $blog->image }}" alt="{{ $blog->title }}" class="w-100 h-100 object-fit-cover">
+    @else
+        <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" alt="{{ $blog->title }}" class="w-100 h-100 object-fit-cover">
+    @endif
     <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end" style="background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);">
         <div class="container pb-4">
             @if(isset($blog->category) && $blog->category)
@@ -83,7 +87,11 @@
                             @foreach($relatedBlogs as $relatedBlog)
                                 <div class="col-md-4">
                                     <div class="card card-hover h-100">
-                                        <img src="{{ $relatedBlog->image_url }}" alt="{{ $relatedBlog->title }}" class="card-image w-100">
+                                        @if($relatedBlog->image)
+                                            <img src="{{ $relatedBlog->image }}" alt="{{ $relatedBlog->title }}" class="card-image w-100">
+                                        @else
+                                            <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" alt="{{ $relatedBlog->title }}" class="card-image w-100">
+                                        @endif
                                         <div class="card-body">
                                             <h6 class="card-title fw-bold mb-2">
                                                 {{ \Illuminate\Support\Str::limit($relatedBlog->title, 50) }}
@@ -151,7 +159,11 @@
                         @foreach($featuredBlogs as $featured)
                             <a href="{{ route('blogs.show', $featured) }}" class="text-decoration-none">
                                 <div class="card card-hover">
-                                    <img src="{{ $featured->image_url }}" alt="{{ $featured->title }}" class="card-image w-100" style="height: 120px;">
+                                    @if($featured->image)
+                                        <img src="{{ $featured->image }}" alt="{{ $featured->title }}" class="card-image w-100" style="height: 120px;">
+                                    @else
+                                        <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" alt="{{ $featured->title }}" class="card-image w-100" style="height: 120px;">
+                                    @endif
                                     <div class="card-body p-3">
                                         <small class="text-muted">
                                             <i class="bi bi-calendar3 me-1"></i>

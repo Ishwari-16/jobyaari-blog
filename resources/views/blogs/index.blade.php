@@ -42,7 +42,11 @@
                     <div class="col-md-6">
                         <div class="card card-hover h-100">
                             <div class="position-relative overflow-hidden">
-                                <img src="{{ $blog->image_url }}" alt="{{ $blog->title }}" class="card-image w-100">
+                                @if($blog->image)
+                                    <img src="{{ $blog->image }}" alt="{{ $blog->title }}" class="card-image w-100">
+                                @else
+                                    <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" alt="{{ $blog->title }}" class="card-image w-100">
+                                @endif
 
                                 @if(isset($blog->is_featured) && $blog->is_featured)
                                     <span class="position-absolute top-0 start-0 m-3 badge badge-category">
@@ -160,7 +164,11 @@
                         @foreach($featuredBlogs as $featured)
                             <a href="{{ route('blogs.show', $featured) }}" class="text-decoration-none">
                                 <div class="card card-hover">
-                                    <img src="{{ $featured->image_url }}" alt="{{ $featured->title }}" class="card-image w-100" style="height: 120px;">
+                                    @if($featured->image)
+                                        <img src="{{ $featured->image }}" alt="{{ $featured->title }}" class="card-image w-100" style="height: 120px;">
+                                    @else
+                                        <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" alt="{{ $featured->title }}" class="card-image w-100" style="height: 120px;">
+                                    @endif
                                     <div class="card-body p-3">
                                         <small class="text-muted">
                                             <i class="bi bi-calendar3 me-1"></i>
