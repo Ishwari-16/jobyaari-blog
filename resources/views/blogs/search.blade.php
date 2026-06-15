@@ -85,11 +85,10 @@
                 @endforelse
             </div>
 
-            <!-- Pagination
-            <div class="mt-5">
-                {{ $blogs->links() }}
+            <!-- Pagination-->
+            <div class="pagination-wrapper">
+                {{ $blogs->onEachSide(1)->links('pagination::bootstrap-5') }}
             </div>
-        </div> -->
 
         <!-- Sidebar -->
         <div class="col-lg-4">
