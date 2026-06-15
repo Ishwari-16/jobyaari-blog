@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Blog;
+use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -11,7 +11,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        $blogs = Blog::with('category')->latest()->paginate(10);
+        $blogs = Post::with('category')->latest()->paginate(10);
         return view('admin.posts.index', compact('blogs'));
     }
 
@@ -38,7 +38,7 @@ class PostController extends Controller
             $imagePath = $request->file('image')->store('blogs', 'public');
         }
 
-        Blog::create([
+        Post::create([
             'title' => $request->title,
             'slug' => Str::slug($request->title) . '-' . time(),
             'content' => $request->content,
@@ -52,18 +52,18 @@ class PostController extends Controller
         return redirect()->route('admin.posts.index')->with('success', 'Blog created successfully');
     }
 
-    public function show(Blog $blog)
+    public function show(Post $blog)
     {
         return view('admin.posts.show', compact('blog'));
     }
 
-    public function edit(Blog $blog)
+    public function edit(Post $blog)
     {
         $categories = Category::all();
         return view('admin.posts.edit', compact('blog', 'categories'));
     }
 
-    public function update(Request $request, Blog $blog)
+    public function update(Request $request, Post $blog)
     {
         $request->validate([
             'title' => 'required',
@@ -94,7 +94,7 @@ class PostController extends Controller
         return redirect()->route('admin.posts.index')->with('success', 'Blog updated successfully');
     }
 
-    public function destroy(Blog $blog)
+    public function destroy(Post $blog)
     {
         $blog->delete();
         return redirect()->route('admin.posts.index')->with('success', 'Blog deleted successfully');

@@ -101,7 +101,7 @@
                                     <small class="text-muted">Recommended size: 1200x630px</small>
                                     @if($blog->image)
                                         <div class="mt-2">
-                                            <img src="{{ asset('storage/' . $post->image) }}" alt="Current Image" class="img-thumbnail" style="max-height: 100px;">
+                                            <img src="{{ asset('storage/' . $blog->image) }}" alt="Current Image" class="img-thumbnail" style="max-height: 100px;">
                                             <p class="small text-muted mt-1">Current image</p>
                                         </div>
                                     @endif
