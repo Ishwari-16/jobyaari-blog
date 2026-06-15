@@ -12,7 +12,7 @@ class BlogSeeder extends Seeder
     public function run(): void
     {
         $categories = Category::all();
-        
+
         $blogTitles = [
             '10 Essential Career Tips for 2024',
             'How to Ace Your Next Job Interview',
@@ -50,7 +50,7 @@ class BlogSeeder extends Seeder
         ];
 
         $blogImages = [
-            'https://images.unsplash.com/photo-1522202176988-66273c2fd55d?w=800&q=80', // Career Tips
+            'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80', // Career Tips
             null,
             null,
             null,
