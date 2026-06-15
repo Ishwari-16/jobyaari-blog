@@ -205,9 +205,7 @@
                         </div>
                     @endforelse
 
-                    <div class="mt-4">
-                        {{ $blogs->links() }}
-                    </div>
+
                 </div>
             </div>
         </div>

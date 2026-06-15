@@ -85,11 +85,11 @@
                 @endforelse
             </div>
 
-            <!-- Pagination -->
+            <!-- Pagination
             <div class="mt-5">
                 {{ $blogs->links() }}
             </div>
-        </div>
+        </div> -->
 
         <!-- Sidebar -->
         <div class="col-lg-4">
