@@ -23,6 +23,7 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
+        dd('STORE METHOD REACHED');
         $request->validate([
             'title' => 'required',
             'content' => 'required',
