@@ -103,7 +103,11 @@
 
             <!-- Pagination -->
             <div class="mt-5">
-                {{ $blogs->links() }}
+                @if($blogs->hasPages())
+                <div class="text-center mt-4">
+                    <a href="?page=1" class="btn btn-primary">Page 1</a>
+                </div>
+                @endif
             </div>
         </div>
 
