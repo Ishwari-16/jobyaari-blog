@@ -51,7 +51,7 @@ class BlogSeeder extends Seeder
 
         $blogImages = [
             'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg', // Career Tips
-            null,
+            'https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg', // Interview Preparation
             null,
             null,
             null,
